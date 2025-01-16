@@ -1,0 +1,23 @@
+URL Dataset: https://www.kaggle.com/datasets/nayanack/online-game-dataset
+
+Syntax DDL for create table at pg admin:
+CREATE TABLE table_m3 (
+    Rank INT PRIMARY KEY,               -- Unique identifier for each row
+    Name VARCHAR(500),                 -- Game name
+    Platform VARCHAR,                   -- Platform
+    Year VARCHAR,                        -- Year releashed
+    Genre VARCHAR(500),                  -- Game genre
+    Publisher VARCHAR(500),              -- Publisher
+    NA_Sales VARCHAR(500),              -- Sales in North America
+    EU_Sales VARCHAR(500),               -- Sales in Europe
+    JP_Sales VARCHAR(500),               -- Sales in Japan
+    Other_Sales VARCHAR(500),           -- Sales in Other Region
+    Global_Sales VARCHAR(500)          -- Sales Globally
+ 
+);
+
+Syntax DML copy table:
+COPY table_m3 (Rank, Name, Platform, Year, Genre, Publisher, NA_Sales, EU_Sales, JP_Sales, Other_Sales, Global_Sales)
+FROM '/mnt/data/P2M3_dini_anggriyani_data_raw.csv'
+DELIMITER ','
+CSV HEADER;
